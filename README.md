@@ -1,42 +1,47 @@
-# Student Course Management System
+# Student and Course Management System
 
-## Overview
-This is a Spring Boot web application that manages Students and Courses. It supports creating, reading, and updating student records, along with displaying their associated courses.
+A Spring Boot web application designed to manage student records and their associated courses. This project was built to demonstrate full-stack development using Spring Boot, JPA, and JSP with a custom-styled user interface.
 
-## Features
-- **Populate Database**: Automatically populates 10 courses and 10 students on startup.
-- **Create Operation**: Add new students via a web form.
-- **Read Operation**: View a list of all students with an INNER JOIN to their respective courses.
-- **Update Operation**: Modify existing student details.
-- **Premium UI**: Modern, responsive design using custom CSS.
+## Key Features
+- **Automated Data Population**: The system automatically generates 10 courses and 10 student records upon startup for testing purposes.
+- **Student Management**: Full support for adding, viewing, and updating student information.
+- **Relational Data**: Implements an INNER JOIN between Students and Courses to display related information in a single view.
+- **Custom UI**: A responsive and modern interface built using vanilla CSS.
+- **Unit Testing**: Core service logic is validated using JUnit 5 and Mockito.
 
-## Technologies Used
-- Java 17
-- Spring Boot 3.2
-- Spring Data JPA
-- Jakarta JSP & JSTL
-- MySQL
+## Technology Stack
+- **Backend**: Java 17, Spring Boot 3.2, Spring Data JPA
+- **Database**: MySQL
+- **Frontend**: Jakarta JSP, JSTL, Vanilla CSS
+- **Testing**: JUnit 5, Mockito
 
-## Architecture
-The application follows a standard layered architecture:
-- **Model**: Entity definitions (`Student`, `Course`).
-- **Repository**: Database operations using JPA.
-- **Service**: Business logic.
-- **Controller**: HTTP request handling.
-- **View**: JSP templates with premium styling.
+## Installation and Setup
 
-## How to Run
-1. **Configure Database**: Update `src/main/resources/application.properties` with your MySQL credentials.
-2. **Create Schema**: Run `CREATE DATABASE student_db;` in your MySQL client.
-3. **Run Application**: Execute `DemoApplication.java` from your IDE.
-4. **Access**: Navigate to `http://localhost:8080/students`.
-
-## Testing
-Unit tests are implemented using **JUnit 5** and **Mockito**. Run them using:
-```bash
-mvn test
+### 1. Database Configuration
+Ensure MySQL is installed and running on your system. Create the required database using:
+```sql
+CREATE DATABASE student_db;
 ```
+
+### 2. Application Properties
+Update the database credentials in `src/main/resources/application.properties` to match your local MySQL setup:
+```properties
+spring.datasource.username=root
+spring.datasource.password=root
+```
+
+### 3. Execution
+Run the application using your IDE or via the command line:
+```bash
+mvn spring-boot:run
+```
+
+### 4. Access
+The application will be available at:
+`http://localhost:8080/students`
 
 ## Author
 Aditya Prasad
 
+---
+Spring Boot Assignment - May 2026
