@@ -28,6 +28,7 @@
                 <td>${s.course.title}</td>
                 <td>
                     <a href="/editStudent/${s.id}" class="btn btn-outline">Edit</a>
+                    <a href="/deleteStudent/${s.id}" class="btn btn-outline" style="color: #ef4444; border-color: #fca5a5;" onclick="return confirm('Are you sure you want to delete this student?')">Delete</a>
                 </td>
             </tr>
         </c:forEach>

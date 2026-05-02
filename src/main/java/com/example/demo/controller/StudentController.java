@@ -17,14 +17,12 @@ public class StudentController {
     @Autowired
     private CourseService courseService;
 
-    // READ
     @GetMapping("/students")
     public String listStudents(Model model) {
         model.addAttribute("students", studentService.getStudentsWithCourses());
         return "students";
     }
 
-    // CREATE FORM
     @GetMapping("/addStudent")
     public String showForm(Model model) {
         model.addAttribute("student", new Student());
@@ -32,14 +30,12 @@ public class StudentController {
         return "add-student";
     }
 
-    // CREATE
     @PostMapping("/saveStudent")
     public String saveStudent(@ModelAttribute Student student) {
         studentService.saveStudent(student);
         return "redirect:/students";
     }
 
-    // UPDATE FORM
     @GetMapping("/editStudent/{id}")
     public String editStudent(@PathVariable Long id, Model model) {
         model.addAttribute("student", studentService.getStudentById(id));
@@ -47,10 +43,15 @@ public class StudentController {
         return "edit-student";
     }
 
-    // UPDATE
     @PostMapping("/updateStudent")
     public String updateStudent(@ModelAttribute Student student) {
         studentService.saveStudent(student);
+        return "redirect:/students";
+    }
+
+    @GetMapping("/deleteStudent/{id}")
+    public String deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
         return "redirect:/students";
     }
 }
