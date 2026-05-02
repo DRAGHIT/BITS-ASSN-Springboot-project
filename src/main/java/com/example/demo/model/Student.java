@@ -17,7 +17,6 @@ public class Student {
     @JoinColumn(name = "course_id")
     private Course course;
 
-    // Constructors
     public Student() {}
 
     public Student(String name, String email, Course course) {
@@ -26,7 +25,6 @@ public class Student {
         this.course = course;
     }
 
-    // Getters & Setters
     public Long getId() {
         return id;
     }

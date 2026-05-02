@@ -15,14 +15,12 @@ public class Course {
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<Student> students;
 
-    // Constructors
     public Course() {}
 
     public Course(String title) {
         this.title = title;
     }
 
-    // Getters & Setters
     public Long getId() {
         return id;
     }
